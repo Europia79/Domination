@@ -1,0 +1,8 @@
+name: BattlecraftFlags
+main: co.battlecraft.Flags.Main
+version: 0.1
+website: http://Rainbowcraft.net/
+description: Capture each objective.
+authors: [Europia79]
+depend: [BattleArena]
+prefix: BCflags
