@@ -9,7 +9,7 @@ import org.bukkit.event.Event;
 import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitTask;
-import util.GameTimer;
+import co.battlecraft.util.GameTimer;
 
 /**
  *
