@@ -14,9 +14,9 @@ import org.bukkit.event.player.PlayerJoinEvent;
  * @author Nikolai
  */
 public class PlayerJoinListener implements Listener {
-    Main plugin;
-    int taskID;
-    int time;
+    private Main plugin;
+    private int taskID;
+    private int time;
     
     
     public PlayerJoinListener(Main instance) {
@@ -27,20 +27,21 @@ public class PlayerJoinListener implements Listener {
     public void onPlayerJoin(PlayerJoinEvent e) {
         
         time = 10;
-        final Player p = e.getPlayer();
+        Player p = (Player) e.getPlayer();
         p.sendMessage("Welcome to Battlecraft !");
         
         
-        taskID = plugin.getServer().getScheduler().scheduleSyncRepeatingTask(plugin, new Runnable()                
+        taskID = Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this.plugin, new Runnable()                
         {
 
             @Override
             public void run() {
                 Bukkit.broadcastMessage(Integer.toString(time));
                 plugin.getServer().broadcastMessage("" + time);
-                p.sendMessage("" + time);       
-                if (time < -10)
-                { 
+                //p.sendMessage("" + time);       
+                if (time < 0)
+                {
+                    PlayerJoinListener.this.cancel();
                     plugin.getServer().getScheduler().cancelTask(taskID); 
                 }
                 time = time - 1;
@@ -50,6 +51,10 @@ public class PlayerJoinListener implements Listener {
 
         
 
+    }
+
+    private void cancel() {
+        Bukkit.getScheduler().cancelTask(taskID);
     }
     
     

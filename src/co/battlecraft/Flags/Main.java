@@ -4,7 +4,6 @@
  */
 package co.battlecraft.Flags;
 
-import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -14,18 +13,14 @@ import org.bukkit.plugin.java.JavaPlugin;
  * 
  */
 public class Main extends JavaPlugin {
-    int time;
-    int taskID;
     
     @Override
     public void onEnable() {
-        time = 10;
-        getServer().getPluginManager().registerEvents(new InventoryOpenListener(), this);
-        getServer().getPluginManager().registerEvents(new PlayerJoinListener(this), this);
+        
+        getServer().getPluginManager().registerEvents(new InventoryListener(this), this);
+        //getServer().getPluginManager().registerEvents(new PlayerJoinListener(this), this);
         
     }
-
-    
     
 
 }
