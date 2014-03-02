@@ -38,7 +38,7 @@ public class PlayerJoinListener implements Listener {
             public void run() {
                 Bukkit.broadcastMessage(Integer.toString(time));
                 plugin.getServer().broadcastMessage("" + time);
-                //p.sendMessage("" + time);       
+                //p.sendMessage("" + time);
                 if (time < 0)
                 {
                     PlayerJoinListener.this.cancel();

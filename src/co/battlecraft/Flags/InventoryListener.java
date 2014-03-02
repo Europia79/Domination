@@ -60,9 +60,10 @@ public class InventoryListener implements Listener {
             if (pmap.containsKey(e.getPlayer().getName()) ) {
                 //if (pmap.get(e.getPlayer()).getTimer().
                 //
-                objectif = pmap.get(e.getPlayer());
-                task = objectif.getTask();
-                task.cancel();
+                //objectif = pmap.get(e.getPlayer().getName());
+                //task = objectif.getTask();
+                //task.cancel();
+                pmap.get(e.getPlayer().getName()).getTask().cancel();
                 pmap.remove(e.getPlayer().getName());
                 
             }

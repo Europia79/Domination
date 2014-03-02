@@ -1,3 +1,8 @@
+CHANGELOG:
+Error fixed on March 1st, 2014: GameTimer works.
+pmap.get(e.getPlayer()) should have been 
+pmap.get(e.getPlayer().getName()) 
+
 2014-03-01 21:51:19 [Server thread][ERROR] Could not pass event InventoryCloseEvent to BattlecraftFlags v0.1
 org.bukkit.event.EventException
 	at org.bukkit.plugin.java.JavaPluginLoader$1.execute(JavaPluginLoader.java:320) ~[craftbukkit.jar:git-Bukkit-1.7.2-R0.3-b3020jnks]

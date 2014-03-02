@@ -18,7 +18,7 @@ import co.battlecraft.util.GameTimer;
 class Objectif {
     
     Plugin plugin;
-    Event event;
+    InventoryOpenEvent event;
     GameTimer timer;
     BukkitTask taskID;
     Location loc;
