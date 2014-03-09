@@ -17,15 +17,16 @@ import co.battlecraft.util.GameTimer;
  */
 class Objectif {
     
-    Plugin plugin;
+    Main plugin;
     InventoryOpenEvent event;
     GameTimer timer;
     BukkitTask taskID;
     Location loc;
     
-    public Objectif(Plugin instance, InventoryOpenEvent e) {
+    public Objectif(Main instance, InventoryOpenEvent e) {
         
-        this.plugin = instance;
+        // this.plugin = instance;
+        this.plugin = Main.getSelf();
         this.event = e;
         this.timer = new GameTimer(e);
         taskID = timer.runTaskTimer(plugin, 20L, 20L);

@@ -6,6 +6,7 @@ package co.battlecraft.Flags;
 
 import java.util.HashMap;
 import java.util.Map;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -23,14 +24,21 @@ import org.bukkit.scheduler.BukkitTask;
  */
 public class InventoryListener implements Listener {
     
-    Plugin plugin;
+    Main plugin;
     Map<String, Objectif> pmap;
     Objectif objectif;
     BukkitTask task;
     
-    public InventoryListener(Plugin instance) {
+    public InventoryListener(Main instance) {
         
-        this.plugin = instance;
+        // This line fixes NPE + NoSuchMethodError
+        this.plugin = (Main) Bukkit.getServer().getPluginManager().getPlugin("BattlecraftFlags");
+        // causes NoSuchMethodError
+        // at onEnable() line 20
+        // this.plugin = instance;
+        // causes NullPointerExeception
+        // at InventoryListener line 57
+        // this.plugin = Main.getSelf();
         this.pmap = new HashMap<String, Objectif>();
                 
     }
@@ -48,8 +56,8 @@ public class InventoryListener implements Listener {
                     + "Z = " + ChatColor.YELLOW + ((int) player.getLocation().getZ()) + " " + ChatColor.GRAY
                     );
             
-            pmap.put(player.getName(), new Objectif(plugin, e) );              
-            
+            pmap.put(player.getName(), new Objectif(plugin, e) );    
+            plugin.debug.messagePlayer(player, ChatColor.LIGHT_PURPLE + "This is a debugging message");
         }
 
     }
