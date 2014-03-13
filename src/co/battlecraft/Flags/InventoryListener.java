@@ -15,6 +15,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.event.inventory.InventoryType;
+import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitTask;
 
@@ -25,21 +26,11 @@ import org.bukkit.scheduler.BukkitTask;
 public class InventoryListener implements Listener {
     
     Main plugin;
-    Map<String, Objectif> pmap;
-    Objectif objectif;
-    BukkitTask task;
     
     public InventoryListener(Main instance) {
         
-        // This line fixes NPE + NoSuchMethodError
         this.plugin = (Main) Bukkit.getServer().getPluginManager().getPlugin("BattlecraftFlags");
-        // causes NoSuchMethodError
-        // at onEnable() line 20
-        // this.plugin = instance;
-        // causes NullPointerExeception
-        // at InventoryListener line 57
-        // this.plugin = Main.getSelf();
-        this.pmap = new HashMap<String, Objectif>();
+        plugin.pmap = new HashMap<String, Objectif>();
                 
     }
     
@@ -56,7 +47,8 @@ public class InventoryListener implements Listener {
                     + "Z = " + ChatColor.YELLOW + ((int) player.getLocation().getZ()) + " " + ChatColor.GRAY
                     );
             
-            pmap.put(player.getName(), new Objectif(plugin, e) );    
+            plugin.pmap.put(player.getName(), new Objectif(e) );
+            player.closeInventory();
             plugin.debug.messagePlayer(player, ChatColor.LIGHT_PURPLE + "This is a debugging message");
         }
 
@@ -64,18 +56,14 @@ public class InventoryListener implements Listener {
     
     @EventHandler (priority = EventPriority.NORMAL)
     public void onInventoryClose(InventoryCloseEvent e) {
-        if (e.getInventory().getType() == InventoryType.BEACON) {
+       /* if (e.getInventory().getType() == InventoryType.BEACON) {
             if (pmap.containsKey(e.getPlayer().getName()) ) {
                 //if (pmap.get(e.getPlayer()).getTimer().
-                //
-                //objectif = pmap.get(e.getPlayer().getName());
-                //task = objectif.getTask();
-                //task.cancel();
                 pmap.get(e.getPlayer().getName()).getTask().cancel();
                 pmap.remove(e.getPlayer().getName());
-                
-            }
-        }
+               
+            } 
+        } */
 
         
     }
