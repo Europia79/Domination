@@ -1,11 +1,6 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.battlecraft.Flags;
 
 import java.util.HashMap;
-import java.util.Map;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -15,9 +10,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.event.inventory.InventoryType;
-import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.plugin.Plugin;
-import org.bukkit.scheduler.BukkitTask;
 
 /**
  *
@@ -39,6 +31,7 @@ public class InventoryListener implements Listener {
         
         if (e.getInventory().getType() == InventoryType.BEACON) {
             Player player = (Player) e.getPlayer();
+            // player.closeInventory();
             player.sendMessage(ChatColor.GRAY
                     + "You are about to capture the objective at ");
             player.sendMessage(ChatColor.GRAY
@@ -48,7 +41,6 @@ public class InventoryListener implements Listener {
                     );
             
             plugin.pmap.put(player.getName(), new Objectif(e) );
-            player.closeInventory();
             plugin.debug.messagePlayer(player, ChatColor.LIGHT_PURPLE + "This is a debugging message");
         }
 

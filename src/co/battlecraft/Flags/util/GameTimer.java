@@ -1,8 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-package co.battlecraft.util;
+package co.battlecraft.Flags.util;
 
 import co.battlecraft.Flags.Main;
 import co.battlecraft.Flags.Objectif;
@@ -33,7 +29,8 @@ public class GameTimer extends BukkitRunnable {
         this.plugin = (Main) Bukkit.getServer().getPluginManager().getPlugin("BattlecraftFlags");
         this.event = o.getEvent();
         this.player = (Player) event.getPlayer();
-        this.BEACON_LOCATION = o.getOriginalLoc();
+        player.closeInventory();
+        this.BEACON_LOCATION = o.getBeaconLocation();
         this.duration = 10;
     }
 
@@ -63,7 +60,7 @@ public class GameTimer extends BukkitRunnable {
             return;         
         }
         player.sendMessage("" + i);
-        if (i >= 8) {          
+        if (i >= 7) {          
             player.sendMessage(ChatColor.LIGHT_PURPLE
                     + "You have captured this objective!");
             this.cancel();
