@@ -42,6 +42,7 @@ public class InventoryListener implements Listener {
             
             plugin.pmap.put(player.getName(), new Objectif(e) );
             plugin.debug.messagePlayer(player, ChatColor.LIGHT_PURPLE + "This is a debugging message");
+            e.setCancelled(true);
         }
 
     }
