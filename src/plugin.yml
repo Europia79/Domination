@@ -1,8 +1,14 @@
-name: BattlecraftFlags
-main: co.battlecraft.Flags.Main
+name: Domination
+main: com.github.Europia79.Domination.Main
 version: 0.1
-website: http://Rainbowcraft.net/
+website: http://www.Battlecraft.co/
 description: Capture each objective.
 authors: [Europia79]
 depend: [BattleArena]
-prefix: BCflags
+prefix: Domination
+commands:
+    domination:
+        aliases: [domim,dom,dmt,dm,conquest]
+        description: Domination and Conquest commands
+        usage: Problem loading plugin, please send errors on startup to alkarin_v
+        

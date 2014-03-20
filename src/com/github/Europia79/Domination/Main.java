@@ -1,6 +1,7 @@
-package co.battlecraft.Flags;
+package com.github.Europia79.Domination;
 
-import co.battlecraft.Flags.debug.*;
+import com.github.Europia79.Domination.debug.DebugInterface;
+import com.github.Europia79.Domination.debug.DebugOn;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;

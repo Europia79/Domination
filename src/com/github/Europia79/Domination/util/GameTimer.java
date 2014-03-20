@@ -1,7 +1,7 @@
-package co.battlecraft.Flags.util;
+package com.github.Europia79.Domination.util;
 
-import co.battlecraft.Flags.Main;
-import co.battlecraft.Flags.Objectif;
+import com.github.Europia79.Domination.Main;
+import com.github.Europia79.Domination.Objectif;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;

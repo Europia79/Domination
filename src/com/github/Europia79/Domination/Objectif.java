@@ -2,12 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.battlecraft.Flags;
+package com.github.Europia79.Domination;
 
 import org.bukkit.Location;
 import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.scheduler.BukkitTask;
-import co.battlecraft.Flags.util.GameTimer;
+import com.github.Europia79.Domination.util.GameTimer;
 import org.bukkit.Bukkit;
 
 /**

@@ -1,4 +1,4 @@
-package co.battlecraft.Flags;
+package com.github.Europia79.Domination;
 
 import java.util.HashMap;
 import org.bukkit.Bukkit;

@@ -1,4 +1,4 @@
-package co.battlecraft.Flags.debug;
+package com.github.Europia79.Domination.debug;
 
 import org.bukkit.entity.Player;
 

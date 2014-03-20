@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.battlecraft.Flags;
+package com.github.Europia79.Domination;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
