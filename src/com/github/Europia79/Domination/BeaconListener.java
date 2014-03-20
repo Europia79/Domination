@@ -15,11 +15,11 @@ import org.bukkit.event.inventory.InventoryType;
  *
  * @author Nikolai
  */
-public class InventoryListener implements Listener {
+public class BeaconListener implements Listener {
     
     Main plugin;
     
-    public InventoryListener(Main instance) {
+    public BeaconListener(Main instance) {
         
         this.plugin = (Main) Bukkit.getServer().getPluginManager().getPlugin("BattlecraftFlags");
         plugin.pmap = new HashMap<String, Objectif>();

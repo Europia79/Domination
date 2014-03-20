@@ -25,7 +25,7 @@ public class Main extends JavaPlugin {
         Main.reference = this;
         debug = new DebugOn();
 
-        getServer().getPluginManager().registerEvents(new InventoryListener(this), this);
+        getServer().getPluginManager().registerEvents(new BeaconListener(this), this);
         
         
     }
